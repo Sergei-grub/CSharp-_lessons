@@ -1,4 +1,3 @@
-﻿// 1 пример
-Console.WriteLine("Hello, World!");
-Console.WriteLine("Hello, World!");
+﻿// 1 пример - вывод 
+Console.WriteLine("Hello, Hello, Hello");
 Console.WriteLine("Hello, World!");
