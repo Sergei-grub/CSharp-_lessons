@@ -5,7 +5,6 @@
 918 -> 1
 */
 
-
 Console.Write("Введите трехзначное число: ");
 int userNum = Convert.ToInt32(Console.ReadLine());
 int num2 = userNum / 10;
