@@ -8,5 +8,5 @@
 Console.Write("Введите день недели (от 1 до 7): ");
 int numD = Convert.ToInt32(Console.ReadLine());
 if (numD < 8 && numD == 6 || numD == 7) Console.WriteLine($"{numD} — это выходной!");
-if (numD < 6 && numD > 0) Console.WriteLine($"{numD} — это рабочий день (");
+else if (numD < 6 && numD > 0) Console.WriteLine($"{numD} — это рабочий день (");
 else Console.WriteLine("Введено не корректное число");
