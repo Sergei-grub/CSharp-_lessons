@@ -14,4 +14,4 @@ if (userNum < 1000 & userNum > 99)
        num2 = num2 % 10;
        Console.Write(num2);
     }
-else Console.Write("Число не трехначное!");
+else Console.Write("Число не трехзначное!");
