@@ -67,9 +67,7 @@ Console.WriteLine($"Произведение от 1 до {number} = {Mult(number
 [1,0,1,1,0,1,0,0]
 */
 
-//int[] arr = {10, 2, 3, 4, 9, 1, 3, 7, 8, 6};
-
-void FillArray(int[] collection)
+/* void FillArray(int[] collection)
 {
       int length = collection.Length;
       int index = 0;
@@ -90,9 +88,41 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-int[] array = new int[8]; //Создай новый массив из 8 эл-тов
+int[] array = new int[8]; //Создаем новый массив из 8 эл-тов
+
+FillArray(array);  
+PrintArray(array); */
+
+   
+/*
+Задача 30-v2: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
+[1,0,1,1,0,1,0,0]
+*/
+
+void FillArray(int[] collection)
+{
+      int length = collection.Length;
+      int index = 0;
+      while(index < length)
+      {
+        collection[index] = new Random().Next(0,length);
+        index++;
+      }
+}
+
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("Введите количество элементов: ");
+int userArray = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[userArray]; //Создаем новый массив из количества заданных пользователем элементов.
 
 FillArray(array);  
 PrintArray(array);
-
-   
