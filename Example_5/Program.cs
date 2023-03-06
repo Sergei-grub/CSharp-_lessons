@@ -123,7 +123,7 @@ Console.WriteLine(newText);
 // Работа с массивами. 
 //Перебрать и расставить элементы от меньшего к большему.
 
-int[] arr = {10, 2, 3, 4, 9, 1, 3, 7, 8, 6};
+
 
 void FillArray(int[] collection)
 {
@@ -131,34 +131,60 @@ void FillArray(int[] collection)
       int index = 0;
       while(index < length)
       {
-        collection[index] = new Random().Next(0,2);
+        collection[index] = new Random().Next(0, 2002);
         index++;
       }
 }
 
-void PrintArray(int[] array)
+void SelectionSortMin(int[] array) 
 {
-    int count = array.Length;
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < array.Length - 1; i++)
     {
-        Console.Write($"{array[i]} ");
+        int minPosition = i;
+        
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition]) minPosition = j;            
+        }
+        int tempArray = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = tempArray;
+        Console.Write($" {array[i]}");
     }
-    Console.WriteLine();
 }
-
-int[] array = new int[8]; //Создай новый массив из 8 эл-тов
-
-FillArray(array);  
-PrintArray(array);
-
    
 
-
+void SelectionSortMax(int[] array) 
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+        
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] > array[maxPosition]) maxPosition = j;
+        }
+        int tempArray = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = tempArray;
+        Console.Write($" {array[i]}");
+    }
+}
 
 // Выбор сортировки
 
-/*
-PrintArray(arr);
-SelectionSort(arr);
-PrintArray(arr);
-*/
+int[] arr = {10, 2, 3, 4, 9, 1, 3, 7, 8, 6};
+Console.Write("Определите порядок сортировки. Min to Max '1', Max to Min '2': ");
+int userChoise = Convert.ToInt32(Console.ReadLine());
+FillArray(arr);
+
+if (userChoise == 1)
+{
+    SelectionSortMin(arr);
+}
+else if (userChoise == 2) 
+{
+    SelectionSortMax(arr); 
+}
+else Console.Write("Введено неверное значение!");;
+
