@@ -125,6 +125,17 @@ Console.WriteLine(newText);
 
 int[] arr = {10, 2, 3, 4, 9, 1, 3, 7, 8, 6};
 
+void FillArray(int[] collection)
+{
+      int length = collection.Length;
+      int index = 0;
+      while(index < length)
+      {
+        collection[index] = new Random().Next(0,2);
+        index++;
+      }
+}
+
 void PrintArray(int[] array)
 {
     int count = array.Length;
@@ -135,55 +146,17 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-void SelectionSort(int[] array) 
-{
-    for (int i = 0; i < array.Length - 1; i++)
-    {
-        int minPosition = i;
-        
-        for (int j = i + 1; j < array.Length; j++)
-        {
-            if (array[j] < array[minPosition]) minPosition = j;
-        }
-        int tempArray = array[i];
-        array[i] = array[minPosition];
-        array[minPosition] = tempArray;
-    }
-}
+int[] array = new int[8]; //Создай новый массив из 8 эл-тов
 
-void SelectionSortMax(int[] array) 
-{
-    for (int i = 0; i < array.Length - 1; i++)
-    {
-        int maxPosition = i;
-        
-        for (int j = i + 1; j < array.Length; j++)
-        {
-            if (array[j] > array[maxPosition]) maxPosition = j;
-        }
-        int tempArray = array[i];
-        array[i] = array[maxPosition];
-        array[maxPosition] = tempArray;
-    }
-}
+FillArray(array);  
+PrintArray(array);
+
+   
+
+
 
 // Выбор сортировки
-Console.Write("Определите порядок сортировки. Min to Max '1', Max to Min '2': ");
-int userChoise = Convert.ToInt32(Console.ReadLine());
 
-if (userChoise == 1)
-{
-    //PrintArray(arr);
-    //Console.WriteLine();
-    SelectionSort(arr);
-    PrintArray(arr);
-}
-else if (userChoise == 2) 
-{
-    SelectionSortMax(arr); 
-    PrintArray(arr);
-}
-else Console.Write("Введено неверное значение!");;
 /*
 PrintArray(arr);
 SelectionSort(arr);
