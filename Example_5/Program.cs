@@ -186,5 +186,5 @@ else if (userChoise == 2)
 {
     SelectionSortMax(arr); 
 }
-else Console.Write("Введено неверное значение!");;
+else Console.Write("Введено неверное значение!");
 
