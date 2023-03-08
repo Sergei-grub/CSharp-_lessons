@@ -5,45 +5,36 @@
 23432 -> да
 */
 
-/* int Palindrome(int userNum)
+bool ArrayIn()
 {
-    int num = 0;
-    
-    while(userNum > 999)
+    int[] array1 = new int [5];
+    Console.WriteLine($"Введите число из 5 цифр по очереди:");
+    int count = 1;
+    int countForPaly = 0;
+    for (int i = 0; i < array1.Length; i++)
+        {
+            Console.Write($"Введите {count}-ю цифру: ");
+            int userNum = Convert.ToInt32(Console.ReadLine());
+            if (userNum > 0 & userNum < 10) 
+            {
+                array1[i] = userNum;    
+                count++;
+            }
+            else 
+            {
+                Console.Write($"Вы ввели неправильное значение!");
+                break;
+            }
+        }
+    for (int i = 0; i < array1.Length; i++)
     {
-        num = userNum %= 100;
-        
+        int fromEnd = (array1.Length - 1) - i;
+        Console.Write($"{array1[i]}");
+        if (array1[i] == array1[fromEnd]) countForPaly++; 
     }
-    return num;    
-}
-Console.Write("Введите пятизначное число: ");
-int userNum = Convert.ToInt32(Console.ReadLine()); */
-
-
-/* if (userNum > 9999) 
-{
-    int numMod = Palindrome(userNum);
-    Console.Write(numMod);
-}
-else Console.Write("Число некорректное."); */
-
-bool Palindrome()
-{
-    int[] array = {1, 2, 18, 18, 2, 1};
-    int count = 0; 
-    for (int i = 0; i < array.Length; i++)
-    {
-        int fromEnd = (array.Length - 1) - i;
-        if (array[i] == array[fromEnd]) count++; 
-    }
-    /* if (count == array.Length) Console.WriteLine($"Число является палиндромом");
-    else Console.WriteLine($"Число не палиндромом. Совпало: {count} цифры из {array.Length}"); */
-    return (count == array.Length);
+    return (countForPaly == array1.Length);
 }
 
-
-//int[] array = {1, 2, 18, 18, 2, 7};
-
-Console.WriteLine($"Число является палиндромом?");
-bool Anwer = Palindrome();
-Console.WriteLine(Anwer);
+bool end1 = ArrayIn();
+if (end1 == true) Console.WriteLine($" — Число является палиндромом");
+else Console.WriteLine($" — Число не палиндромом.");
