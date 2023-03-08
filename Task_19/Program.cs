@@ -4,7 +4,6 @@
 12821 -> да
 23432 -> да
 */
-
 bool ArrayIn()
 {
     int[] array1 = new int [5];
