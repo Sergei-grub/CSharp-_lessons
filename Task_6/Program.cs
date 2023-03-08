@@ -3,6 +3,7 @@
 78 -> третьей цифры нет
 32679 -> 6
 */
+
 int Num3(int userNum)
 {
     while(userNum > 999)
