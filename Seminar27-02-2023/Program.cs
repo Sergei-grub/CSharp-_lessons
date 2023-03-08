@@ -14,7 +14,6 @@ int Max(int num)
 int randNumber = new Random().Next(10, 100);
 Console.WriteLine($"В числе {randNumber} самая большая цифра {Max(randNumber)}");
 
-
 Напишите программу, которая принимает
 на вход два числа и проверяет, является
 ли одно число квадратом другого.
