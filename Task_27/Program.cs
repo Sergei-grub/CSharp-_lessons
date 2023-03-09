@@ -1,20 +1,20 @@
-﻿/* Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+﻿/* 
+Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 452 -> 11
 82 -> 10
 9012 -> 12 */
 
-void FindRate (int userNum)
+int SumAllDigit(int number)
 {
-    userNum = 452;
-    for (int i = 10; i < 100; i = i + 10)
+    int result = 0;
+    while (number > 0)
     {
-        int tempNub2 = userNum / i;
-        Console.WriteLine(tempNub2);
+        result += number % 10;
+        number = number / 10;
     }
-    //int tempNub = tempNub1 + tempNub2;
-    //Console.WriteLine($"Результат возведения в степень: {tempNub}");
+    return result;
 }
-Console.Write("Введите число для возведения в степень: ");
-int userNum = Convert.ToInt32(Console.ReadLine());
 
-FindRate (userNum);
+Console.Write("Введите число: ");
+int userNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Сумма всех цифр в чиселе {userNum} = {SumAllDigit(userNum)}");
