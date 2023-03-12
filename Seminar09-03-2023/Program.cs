@@ -157,6 +157,7 @@ int[] array = arrayNumber(size);
 int newLenght = array.Length / 2 + array.Length % 2;
 int[] arrayEnd = new int[newLenght];
 
+Console.WriteLine($"> {newLenght}");
 for(int i = 0; i < array.Length / 2; i++)
 {
     arrayEnd[i] = array[i] * array[array.Length - 1 - i];
