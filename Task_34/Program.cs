@@ -12,7 +12,7 @@ void ArrayThree(int[] arr)
         Console.Write($"{arr[i]} ");
         if(arr[i] % 2 == 0) count++; 
     }
-        Console.Write($"-> {count++}"); 
+        Console.Write($"-> {count}"); 
 } 
 Console.Write("Укажите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
