@@ -4,7 +4,7 @@
 1, -7, 567, 89, 223-> 3
  */
 
-void Recsive(int userNum) 
+void Resive(int userNum) 
 {
     int count = 0;
     int[] arr = new int [userNum];
@@ -19,4 +19,4 @@ void Recsive(int userNum)
 
 Console.Write("Укажите количество чисел для анализа: ");
 int userNum = Convert.ToInt32(Console.ReadLine());
-Recsive(userNum);
+Resive(userNum);
