@@ -9,16 +9,16 @@
 
 int[,] FindInRndArray(int row, int column)
 {
-    int[,] arr = new int [row, column];
+    int[,] arr = new int[row, column];
     Random rnd = new Random();
-    for(int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for(int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            arr[i,j] = rnd.Next(1, 10);           
-            Console.Write($"{arr[i,j]:0.#}\t");
+            arr[i, j] = rnd.Next(1, 10);
+            Console.Write($"{arr[i, j]:0.#}\t");
         }
-        Console.WriteLine();   
+        Console.WriteLine();
     }
     return arr;
 }
@@ -26,21 +26,21 @@ int[,] FindInRndArray(int row, int column)
 void AverageArray(int[,] arr)
 {
     double result = 0;
-    double[] arrResult = new double [arr.GetLength(1)];
-    for(int j = 0; j < arrResult.Length; j++)
+    double[] arrResult = new double[arr.GetLength(1)];
+    for (int j = 0; j < arrResult.Length; j++)
     {
-        for(int i = 0; i < arr.GetLength(0); i++)
+        for (int i = 0; i < arr.GetLength(0); i++)
         {
-            result += arr[i,j];                                                
+            result += arr[i, j];
         }
-    arrResult[j] = result / arr.GetLength(0);
-    result = 0;
+        arrResult[j] = result / arr.GetLength(0);
+        result = 0;
     }
     Console.Write("Среднее арифметическое каждого столбца: ");
-    for(int i = 0; i < arrResult.Length; i++)
+    for (int i = 0; i < arrResult.Length; i++)
     {
         Console.Write($"{arrResult[i]:0.#}");
-        if(i < arrResult.Length - 1) Console.Write($";\t");
+        if (i < arrResult.Length - 1) Console.Write($";\t");
         else Console.Write($".");
     }
 }
