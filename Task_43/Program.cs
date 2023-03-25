@@ -14,7 +14,7 @@ double k2 = Convert.ToInt32(Console.ReadLine());
 
 if(k1 == k2 && b1 == b2) Console.WriteLine("Прямые имеют бесконечное множество точек пересечения");
 else if(k1 == k2 && b1 != b2) Console.WriteLine("Прямые не имеют точек пересечения");
-else if(k1 != k2);
+//else if(k1 != k2);
 
 
 

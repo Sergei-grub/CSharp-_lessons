@@ -193,7 +193,6 @@ SwitchRows(matrix);
 
 int[,] FindInRndArray(int row, int column)
 {
-    int count = 0;
     int[,] arr = new int[row, column];
     Random rnd = new Random();
     for (int k = 0; k < 10; k++)
