@@ -11,7 +11,7 @@
  */
 
 
-int[,] FindInRndArray(int row, int column)
+int[,] FillArray(int row, int column)
 {
     int[,] arr = new int[row, column];
     Random rnd = new Random();
@@ -20,48 +20,49 @@ int[,] FindInRndArray(int row, int column)
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             arr[i, j] = rnd.Next(1, 10);
-            Console.Write($"{arr[i, j]:0.#}\t");
         }
-        Console.WriteLine();
     }
     return arr;
 }
 
+void PrintMatrix(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write($"{arr[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
 void ArraySort(int[,] arr)
 {
-    int temp = 0;
-    int count = 1;
-    //int[] arrResult = new int[arr.GetLength(1)];
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            if (arr[i, j] > arr[i, count])
+            for (int k = 0; k < arr.GetLength(1) - 1; k++)
             {
-                temp = arr[i, count];
-                arr[i, count] = arr[i, j];
-                arr[i, j] = temp;
-                if (count < 4) count++;
+                if (arr[i, k] > arr[i, k + 1])
+                {
+                    int temp = arr[i, k + 1];
+                    arr[i, k + 1] = arr[i, k];
+                    arr[i, k] = temp;
+                }
+            
             }
-            else 
-            {
-                temp = arr[i, j];
-                arr[i, j] = arr[i, count];
-                arr[i, j] = temp;
-                if (count < 4) count++;
-            }
-            Console.Write($"{arr[i, j]}\t");
         }
-
-        Console.WriteLine();
     } 
-
+    PrintMatrix(arr);
 }
 
 Console.Write("Введите число строк: ");
 int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число столбцов: ");
 int column = Convert.ToInt32(Console.ReadLine());
-int[,] arr = FindInRndArray(row, column);
+int[,] arr = FillArray(row, column);
+PrintMatrix(arr);
 Console.WriteLine();
 ArraySort(arr);
