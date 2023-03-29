@@ -16,6 +16,7 @@ int userNum = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(NumRecurse(userNum)); 
  */
 
+
 /* 
 Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 M = 1; N = 15 -> 120
@@ -42,3 +43,20 @@ Console.Write($"Сумма натуральных элементов в пром
 m = 2, n = 3 -> A(m,n) = 9
 m = 3, n = 2 -> A(m,n) = 29
  */
+
+int AkkermanRecurse(int userNumM, int userNumN)
+{
+    {
+        if (userNumM == 0) return userNumN + 1;
+        else if (userNumN == 0) return AkkermanRecurse(userNumM - 1, 1);
+        else return AkkermanRecurse(userNumM - 1, AkkermanRecurse(userNumM, userNumN - 1));
+    }
+}
+
+Console.WriteLine("Программа вычисления функции Аккермана");
+Console.Write("Введите начальное число: ");
+int userNumM = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите конечное число: ");
+int userNumN = Convert.ToInt32(Console.ReadLine());
+//SumRecurse(userNumM, userNumN);
+Console.Write($"A(m,n) = {AkkermanRecurse(userNumM, userNumN)}");
