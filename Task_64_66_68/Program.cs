@@ -58,5 +58,4 @@ Console.Write("Введите начальное число: ");
 int userNumM = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите конечное число: ");
 int userNumN = Convert.ToInt32(Console.ReadLine());
-//SumRecurse(userNumM, userNumN);
 Console.Write($"A(m,n) = {AkkermanRecurse(userNumM, userNumN)}");
